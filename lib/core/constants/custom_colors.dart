@@ -22,4 +22,5 @@ class CustomColors {
   static const Color bgColor = Color(0xFF020617);
   static const Color primaryColor = Color(0xFFFFFFFF);
   static const Color secondaryColor = Color(0xFFfafafa);
+  static const Color accentSecondary = Color(0xFF00FFD1);
 }

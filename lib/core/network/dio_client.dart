@@ -7,7 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class Endpoints {
   Endpoints._();
 
-  static String baseUrl = "https://api.themoviedb.org/";
+  static String baseUrl = "https://api.themoviedb.org/3/";
 
   // receiveTimeout
   static const Duration receiveTimeout = Duration(seconds: 30);
