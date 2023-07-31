@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Endpoints {
@@ -39,8 +40,7 @@ class DioClient {
   Map<String, String> get headers {
     var headers = {
       "Content-Type": "application/json; charset=UTF-8",
-      "Authorization":
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmM2FjYTgxYTg3MmE3NWY3NDYwMjkwNjhhMDAwOWFjZSIsInN1YiI6IjY0YzY1YjZmY2FkYjZiMDBjODI5ZmEyMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eMLQexe-lFTrTDP__32YV4Y01F1d4bMM0IRgYQoG76k",
+      "Authorization": "Bearer ${dotenv.env["barearToken"]}",
     };
 
     return headers;
