@@ -6,12 +6,10 @@ class MovieCard extends StatelessWidget {
     required this.title,
     required this.image,
     required this.id,
-    required this.mediaType,
   });
   final String title;
   final ImageProvider image;
   final String id;
-  final String mediaType;
 
   @override
   Widget build(BuildContext context) {
