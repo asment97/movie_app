@@ -43,4 +43,16 @@ class MovieApi {
       rethrow;
     }
   }
+
+  Future<Response> fetchMovieDetails(int id) async {
+    try {
+      final Response response = await ref.read(dioClientProvider).get(
+            "/movie/$id",
+          );
+
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

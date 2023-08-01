@@ -22,7 +22,7 @@ class CustomMovieList extends StatelessWidget {
             title: movies[index].title.toString(),
             image: CachedNetworkImageProvider(
                 "https://image.tmdb.org/t/p/w500$url"),
-            id: movies[index].id.toString(),
+            id: movies[index].id,
           );
         },
       ),

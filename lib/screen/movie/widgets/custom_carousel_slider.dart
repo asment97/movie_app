@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/models/movie.dart';
+import 'package:movie_app/core/providers/app_provider.dart';
 import 'package:movie_app/screen/movie/widgets/landing_card.dart';
 
 class CustomCarouselSlider extends StatelessWidget {
@@ -16,7 +17,13 @@ class CustomCarouselSlider extends StatelessWidget {
       itemBuilder: (context, index, realIndex) {
         final url = movies[index].backdropPath.toString();
         return GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.movieDetails,
+              arguments: movies[index].id,
+            );
+          },
           child: LandingCard(
             CachedNetworkImageProvider(
               "https://image.tmdb.org/t/p/original$url",

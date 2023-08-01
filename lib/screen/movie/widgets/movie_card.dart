@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/providers/app_provider.dart';
 
 class MovieCard extends StatelessWidget {
   const MovieCard({
@@ -9,12 +10,18 @@ class MovieCard extends StatelessWidget {
   });
   final String title;
   final ImageProvider image;
-  final String id;
+  final int id;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          Routes.movieDetails,
+          arguments: id,
+        );
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

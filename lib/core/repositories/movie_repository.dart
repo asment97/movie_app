@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:movie_app/core/models/movie.dart';
+import 'package:movie_app/core/models/movie_details.dart';
 import 'package:movie_app/core/models/response_data.dart';
 import 'package:movie_app/core/network/apis/movie_api.dart';
 import 'package:movie_app/core/network/dio_exception.dart';
@@ -20,7 +21,7 @@ class MovieRepository {
       final responseData = ResponseData.fromJson(response.data);
 
       return (responseData.results as List<dynamic>)
-          .map((point) => Movie.fromJson(point))
+          .map((movie) => Movie.fromJson(movie))
           .toList();
     } on DioException catch (e) {
       final errorMessage = DioExceptions.fromDioError(e).toString();
@@ -38,7 +39,7 @@ class MovieRepository {
       final responseData = ResponseData.fromJson(response.data);
 
       return (responseData.results as List<dynamic>)
-          .map((point) => Movie.fromJson(point))
+          .map((movie) => Movie.fromJson(movie))
           .toList();
     } on DioException catch (e) {
       final errorMessage = DioExceptions.fromDioError(e).toString();
@@ -56,7 +57,7 @@ class MovieRepository {
       final responseData = ResponseData.fromJson(response.data);
 
       return (responseData.results as List<dynamic>)
-          .map((point) => Movie.fromJson(point))
+          .map((movie) => Movie.fromJson(movie))
           .toList();
     } on DioException catch (e) {
       final errorMessage = DioExceptions.fromDioError(e).toString();
@@ -64,6 +65,21 @@ class MovieRepository {
       throw errorMessage;
     } catch (e, t) {
       log("fetchTopRated", error: e, stackTrace: t);
+      rethrow;
+    }
+  }
+
+  Future<MovieDetails> fetchMovieDetails(int id) async {
+    try {
+      final response = await ref.read(movieApiProvider).fetchMovieDetails(id);
+
+      return MovieDetails.fromJson(response.data);
+    } on DioException catch (e) {
+      final errorMessage = DioExceptions.fromDioError(e).toString();
+      log("fetchMovieDetails", error: errorMessage);
+      throw errorMessage;
+    } catch (e, t) {
+      log("fetchMovieDetails", error: e, stackTrace: t);
       rethrow;
     }
   }
