@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:movie_app/core/providers/bottom_nav_provider.dart';
+import 'package:movie_app/screen/account/account.dart';
 import 'package:movie_app/screen/movie/movie.dart';
 
 class BottomNav extends ConsumerWidget {
@@ -16,7 +17,7 @@ class BottomNav extends ConsumerWidget {
         children: [
           const MoviePage(),
           Container(),
-          Container(),
+          const AccountPage(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
