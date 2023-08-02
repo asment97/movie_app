@@ -8,7 +8,7 @@ class Movie with _$Movie {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Movie({
     required bool adult,
-    required String backdropPath,
+    String? backdropPath,
     required List<int> genreIds,
     required int id,
     required String originalLanguage,

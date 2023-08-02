@@ -21,7 +21,7 @@ Movie _$MovieFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Movie {
   bool get adult => throw _privateConstructorUsedError;
-  String get backdropPath => throw _privateConstructorUsedError;
+  String? get backdropPath => throw _privateConstructorUsedError;
   List<int> get genreIds => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
@@ -47,7 +47,7 @@ abstract class $MovieCopyWith<$Res> {
   @useResult
   $Res call(
       {bool adult,
-      String backdropPath,
+      String? backdropPath,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -76,7 +76,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -95,10 +95,10 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value.genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -159,7 +159,7 @@ abstract class _$$_MovieCopyWith<$Res> implements $MovieCopyWith<$Res> {
   @useResult
   $Res call(
       {bool adult,
-      String backdropPath,
+      String? backdropPath,
       List<int> genreIds,
       int id,
       String originalLanguage,
@@ -184,7 +184,7 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
   @override
   $Res call({
     Object? adult = null,
-    Object? backdropPath = null,
+    Object? backdropPath = freezed,
     Object? genreIds = null,
     Object? id = null,
     Object? originalLanguage = null,
@@ -203,10 +203,10 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
           ? _value.adult
           : adult // ignore: cast_nullable_to_non_nullable
               as bool,
-      backdropPath: null == backdropPath
+      backdropPath: freezed == backdropPath
           ? _value.backdropPath
           : backdropPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       genreIds: null == genreIds
           ? _value._genreIds
           : genreIds // ignore: cast_nullable_to_non_nullable
@@ -265,7 +265,7 @@ class __$$_MovieCopyWithImpl<$Res> extends _$MovieCopyWithImpl<$Res, _$_Movie>
 class _$_Movie implements _Movie {
   const _$_Movie(
       {required this.adult,
-      required this.backdropPath,
+      this.backdropPath,
       required final List<int> genreIds,
       required this.id,
       required this.originalLanguage,
@@ -286,7 +286,7 @@ class _$_Movie implements _Movie {
   @override
   final bool adult;
   @override
-  final String backdropPath;
+  final String? backdropPath;
   final List<int> _genreIds;
   @override
   List<int> get genreIds {
@@ -389,7 +389,7 @@ class _$_Movie implements _Movie {
 abstract class _Movie implements Movie {
   const factory _Movie(
       {required final bool adult,
-      required final String backdropPath,
+      final String? backdropPath,
       required final List<int> genreIds,
       required final int id,
       required final String originalLanguage,
@@ -408,7 +408,7 @@ abstract class _Movie implements Movie {
   @override
   bool get adult;
   @override
-  String get backdropPath;
+  String? get backdropPath;
   @override
   List<int> get genreIds;
   @override

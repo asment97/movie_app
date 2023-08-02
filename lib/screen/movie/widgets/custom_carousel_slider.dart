@@ -15,7 +15,6 @@ class CustomCarouselSlider extends StatelessWidget {
     return CarouselSlider.builder(
       itemCount: movies.length,
       itemBuilder: (context, index, realIndex) {
-        final url = movies[index].backdropPath.toString();
         return GestureDetector(
           onTap: () {
             Navigator.pushNamed(
@@ -25,15 +24,17 @@ class CustomCarouselSlider extends StatelessWidget {
             );
           },
           child: LandingCard(
-            CachedNetworkImageProvider(
-              "https://image.tmdb.org/t/p/original$url",
-            ),
-            movies[index].title.toString(),
+            image: movies[index].backdropPath == null
+                ? Image.asset("assets/images/not_available.png").image
+                : CachedNetworkImageProvider(
+                    "https://image.tmdb.org/t/p/original${movies[index].backdropPath}",
+                  ),
+            name: movies[index].title.toString(),
           ),
         );
       },
       options: CarouselOptions(
-        height: (size.height * 0.33 < 300) ? 300 : size.height * 0.33,
+        height: (size.height * 0.4 < 400) ? 400 : size.height * 0.4,
         aspectRatio: 16 / 9,
         viewportFraction: 1,
         initialPage: 0,

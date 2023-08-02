@@ -2,24 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/constants/custom_colors.dart';
 
 class LandingCard extends StatelessWidget {
-  const LandingCard(this.image, this.name, {super.key});
+  const LandingCard({
+    super.key,
+    required this.image,
+    required this.name,
+  });
   final ImageProvider image;
   final String name;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: (MediaQuery.of(context).size.height * 0.33 < 300)
-          ? 300
-          : MediaQuery.of(context).size.height * 0.33,
+      height: (MediaQuery.of(context).size.height * 0.4 < 400)
+          ? 400
+          : MediaQuery.of(context).size.height * 0.4,
       width: MediaQuery.of(context).size.width,
       child: Stack(
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: (MediaQuery.of(context).size.height * 0.33 < 300)
-                ? 300
-                : MediaQuery.of(context).size.height * 0.33,
+            height: (MediaQuery.of(context).size.height * 0.4 < 400)
+                ? 400
+                : MediaQuery.of(context).size.height * 0.4,
             decoration: BoxDecoration(
               image: DecorationImage(fit: BoxFit.cover, image: image),
             ),
