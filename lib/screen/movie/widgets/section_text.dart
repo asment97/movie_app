@@ -15,7 +15,7 @@ class SectionText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.fromLTRB(10, 20, 20, 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

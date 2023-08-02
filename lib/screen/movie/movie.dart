@@ -35,7 +35,7 @@ class MoviePage extends ConsumerWidget {
               },
               loading: () {
                 return SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.33,
+                  height: MediaQuery.of(context).size.height * 0.4,
                   child: const Center(
                     child: CircularProgressIndicator(),
                   ),

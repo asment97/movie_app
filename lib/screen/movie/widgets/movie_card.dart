@@ -27,19 +27,33 @@ class MovieCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 150,
-            width: 100,
-            margin: const EdgeInsets.fromLTRB(8, 4, 8, 4),
+            height: 200,
+            width: 150,
+            margin: const EdgeInsets.fromLTRB(10, 5, 10, 10),
             decoration: BoxDecoration(
               image: DecorationImage(fit: BoxFit.cover, image: image),
               borderRadius: BorderRadius.circular(10),
+              border: Border.all(
+                color: Colors.grey,
+                width: 1,
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 10,
+                  offset: Offset(2, 2),
+                ),
+              ],
             ),
           ),
           SizedBox(
             width: 100,
             child: Text(
               title,
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               textAlign: TextAlign.center,
