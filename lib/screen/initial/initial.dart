@@ -12,7 +12,7 @@ class InitialPage extends StatelessWidget {
         () {
           Navigator.pushNamedAndRemoveUntil(
             context,
-            Routes.movie,
+            Routes.home,
             (route) => false,
           );
         },
